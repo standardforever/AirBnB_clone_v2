@@ -11,15 +11,18 @@ from flask import Flask
 
 app = Flask(__name__)
 
+
 @app.route('/', strict_slashes=False)
 def hello():
     """It returns Hello HBNB"""
     return ("Hello HBNB!")
 
+
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
     """It return HBNB"""
     return ('HBNB')
+
 
 @app.route('/c/<text>', strict_slashes=False)
 def display_C(text):
@@ -28,7 +31,8 @@ def display_C(text):
     text = ' '.join(text)
     return ("C {}".format(text))
 
-@app.route('/python/', defaults={ 'text': 'is_cool' })
+
+@app.route('/python/', defaults={'text': 'is_cool'})
 @app.route('/python/<text>', strict_slashes=False)
 def print_python(text):
     """it returns python followed by the path to the url"""
@@ -36,5 +40,6 @@ def print_python(text):
     text = ' '.join(text)
     return ("Python {}".format(text))
 
+
 if (__name__) == "__main__":
-    app.run(host = '0.0.0.0', port = 5000)
+    app.run(port=5000, host='0.0.0.0')
