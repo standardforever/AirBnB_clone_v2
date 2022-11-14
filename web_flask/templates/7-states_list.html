@@ -1,13 +1,14 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <HTML lang='en'>
-	<HEAD>
-		<H1>States</H1>
-	</HEAD>
-	<BODY>
-		<UL>
-			{%+ for state in state_list|sort(atrribute="name" %}
-			<LI> {{ state|attr('id') }}: <B>{{ state|attr("name") }}</LI>
-			{% endfor %}
-		</UL>
-	</BODY>
+
+<HEAD>
+	<H1>States</H1>
+</HEAD>
+<BODY>
+	<UL>
+		{% for state in states|sort(atrribute="name" %}
+		<LI> {{ state|attr('id') }}: <B>{{ state|attr("name") }}</B></LI>
+		{% endfor %}
+	</UL>
+</BODY>
 </HTML>
